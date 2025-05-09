@@ -10,7 +10,7 @@ const config = {
   DB_DATABASE: process.env.DB_DATABASE || 'test',
   DB_PASSWORD: process.env.DB_PASSWORD || 'password',
   DB_PORT: process.env.DB_PORT || 3306,
-  DB_DIALECT: process.env.DB_DIALECT || 'mysql',
+  DB_DIALECT: process.env.DB_DIALECT || 'postgres',
 }
 
 

@@ -2,13 +2,15 @@ import Fastify from "fastify";
 import routes from "./routes/index.js";
 import config from "./config/env.config.js";
 import dbConfigString from "./config/db.config.js";
-import dbConnector from "./database/connector.js";
+import dbConnector from "./plugins/databaseConnector.js";
+import oauthPlugin from "./plugins/oauthPlugin.js";
 
 const fastify = Fastify({
   logger: true,
 });
 
 fastify.register(dbConnector);
+fastify.register(oauthPlugin);
 
 fastify.register(import("@fastify/cors"), {
   origin: "*",
